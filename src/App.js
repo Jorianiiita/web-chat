@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import Home from './pages/Home.jsx'
+import WebChat from './pages/WebChat.jsx'
 
 function NotFound () {
   return (
@@ -14,7 +14,7 @@ function App (props) {
     <Router>
       <div>
         <Switch>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' component={WebChat} />
           <Route path='*' component={NotFound} />
         </Switch>
       </div>

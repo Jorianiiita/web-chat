@@ -1,4 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   width: 100%;
   height: 100%;
+  margin: 0px;
+  height: 0px;
+}
+
+.container {
+  display: flex;
+  flex-flow: row;
+}
+
+.friend-search {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.friend-search input {
+  width: 100%;
+  padding: 5px 8px;
+}
+
+.left-view-container {
+  flex: 1 30%;
+  border-right: 1px solid rgba(0,0,0,0.2);
+}
+
+
+.main-view-container {
+  flex: 1 70%;
+}
+
+.friend-list-container {
+  height: 96vh;
+  overflow-y: scroll;
+}
+
+.friend-container {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.friend-image-wrapper {
+  margin-right: 10px; 
+}
+
+.friend-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.friend-name-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.friend-name {
+  font-size: 16px;
+}
+
+.friend-time {
+  font-size: 10px;
+  color: rgba(0,0,0,0.4);
+}
+
+.friend-right-view {
+  width: 100%;
+}
+
+.message-form-wrapper {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  padding-left: 30%;
+  width: 100%;
+}
+
+.message-form {
+  padding: 10px 15px;
+  background-color: #f5f1ee;
+}
+
+.message-form input {
+  padding: 8px 10px;
+  width: 100%;
 }
