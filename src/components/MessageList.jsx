@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Message from './Message.jsx';
+import Message from './Message.jsx'
 
 class MessageList extends Component {
-  componentDidUpdate() {
+  componentDidUpdate () {
     // There is a new message in the state, scroll to bottom of list
-    const objDiv = document.getElementById('messageList');
-    objDiv.scrollTop = objDiv.scrollHeight;
+    const objDiv = document.getElementById('messageList')
+    objDiv.scrollTop = objDiv.scrollHeight
   }
 
   render () {
@@ -15,9 +15,9 @@ class MessageList extends Component {
           key={i}
           username={message.username}
           message={message.text}
-          fromMe={message.fromMe} />
-      );
-    });
+          fromMe={(message.from === this.props.username)} />
+      )
+    })
 
     return (
       <div className='messages' id='messageList'>
@@ -29,6 +29,6 @@ class MessageList extends Component {
 
 MessageList.defaultProps = {
   messages: []
-};
+}
 
 export default MessageList

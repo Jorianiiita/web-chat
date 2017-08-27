@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LeftView from './../components/LeftView.jsx'
 import MainView from './../components/MainView.jsx'
+import Auth from './../components/Auth.jsx'
 
 class WebChat extends Component {
   constructor (props) {
@@ -23,10 +24,12 @@ class WebChat extends Component {
 
   render () {
     return (
-      <div className='container'>
-        <LeftView onFriendChange={this.onFriendChange}/>
-        <MainView to={this.state.username} username={window.username} />
-      </div>
+      <Auth>
+        <div className='container'>
+          <LeftView onFriendChange={this.onFriendChange}/>
+          <MainView to={this.state.username} username={window.username} />
+        </div>
+      </Auth>
     )
   }
 }
