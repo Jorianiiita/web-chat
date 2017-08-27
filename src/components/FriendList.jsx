@@ -51,6 +51,7 @@ class FriendList extends Component {
     this.setState({
       search: e.target.value
     })
+    this.getData({q: e.target.value})
   }
 
   render () {
