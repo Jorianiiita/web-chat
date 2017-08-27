@@ -1,3 +1,4 @@
 {
-  "API_HOST": "http://localhost:3004"  
+  "API_HOST": "http://localhost:3004",
+  "SOCKET_HOST": "http://localhost:8001"
 }

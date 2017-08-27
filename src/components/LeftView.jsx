@@ -5,10 +5,7 @@ class LeftView extends Component {
   render () {
     return (
       <div className='left-view-container'>
-        <form className='friend-search'>
-          <input type='text' placeholder='Search' />
-        </form>
-        <FriendList />
+        <FriendList onFriendChange={this.props.onFriendChange} />
       </div>
     )
   }

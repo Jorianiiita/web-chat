@@ -15,7 +15,7 @@ body {
 }
 
 .friend-search {
-  padding: 10px;
+  padding: 20px 10px;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
@@ -90,4 +90,12 @@ body {
 .message-form input {
   padding: 8px 10px;
   width: 100%;
+}
+
+.from-me {
+  text-align: right;
+}
+
+.messages {
+  padding: 10px;
 }
