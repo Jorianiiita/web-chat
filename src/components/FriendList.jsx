@@ -10,10 +10,13 @@ class FriendList extends Component {
       data: [],
       search: ''
     }
+    let query = this.props.userData.friends.map((id) => {
+      return `id=${id}`
+    })
+    this.api = new API({url: API_HOST + '/' + 'users?' + query.join('&')})
     this.onFriendChange = this.onFriendChange.bind(this)
     this.onFriendSearch = this.onFriendSearch.bind(this)
     this.onChange = this.onChange.bind(this)
-    this.api = new API({url: API_HOST + '/' + 'users'})
   }
 
   getData (params) {
@@ -25,15 +28,7 @@ class FriendList extends Component {
   }
 
   componentDidMount () {
-    let query = this.props.userData.friends.map((id) => {
-      return `id=${id}`
-    })
-    let api = new API({url: API_HOST + '/' + 'users?' + query.join('&')})
-    api.get().then((response) => {
-      this.setState({
-        data: response.data
-      })
-    })
+    this.getData()
   }
 
   onFriendChange (e) {

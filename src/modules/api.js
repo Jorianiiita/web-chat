@@ -36,7 +36,7 @@ function call (api, method, params) {
   switch (method) {
     case 'GET':
       options.headers['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
-      api = api + ((querystring) ? '?' + querystring : '')
+      api = api + ((querystring) ? ((api.indexOf('?') === -1) ? '?' : '&') + querystring : '')
       break
     case 'PUT':
       options.headers['Content-Type'] = 'application/json'

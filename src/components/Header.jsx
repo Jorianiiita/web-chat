@@ -7,7 +7,7 @@ class Header extends Component {
         <div className='friend-image-wrapper'>
           <img className='friend-image' src={this.props.userData.image} />
         </div>
-        <div>{this.props.userData.username}</div>
+        <div className='friend-right-view'>{this.props.userData.username}</div>
       </div>
     )
   }
