@@ -3,7 +3,7 @@ import {Redirect} from 'react-router-dom'
 
 class Auth extends Component {
   render () {
-    if (!window.username) {
+    if (!window.userData) {
       return <Redirect to='/' />
     }
     return (

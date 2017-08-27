@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {API_HOST} from 'config'
 import API from './../modules/api'
-import {getParentNodeWithClass} from  './../modules/lib.js'
+import {getParentNodeWithClass} from './../modules/lib.js'
 
 class FriendList extends Component {
   constructor (props) {
@@ -13,7 +13,7 @@ class FriendList extends Component {
     this.onFriendChange = this.onFriendChange.bind(this)
     this.onFriendSearch = this.onFriendSearch.bind(this)
     this.onChange = this.onChange.bind(this)
-    this.api = new API({url: API_HOST + '/' + 'friend'})
+    this.api = new API({url: API_HOST + '/' + 'users'})
   }
 
   getData (params) {
@@ -25,7 +25,15 @@ class FriendList extends Component {
   }
 
   componentDidMount () {
-    this.getData()
+    let query = this.props.userData.friends.map((id) => {
+      return `id=${id}`
+    })
+    let api = new API({url: API_HOST + '/' + 'users?' + query.join('&')})
+    api.get().then((response) => {
+      this.setState({
+        data: response.data
+      })
+    })
   }
 
   onFriendChange (e) {
@@ -35,8 +43,8 @@ class FriendList extends Component {
       friend.style.backgroundColor = '#fff'
     })
     let parentNode = getParentNodeWithClass(e.target, 'friend-container')
-    parentNode.style.backgroundColor = '#c3c3c3'
-    this.props.onFriendChange(parentNode.getAttribute('data-phone'), parentNode.getAttribute('data-id'), parentNode.getAttribute('data-username'))
+    parentNode.style.backgroundColor = '#eee'
+    this.props.onFriendChange(parentNode.getAttribute('data-id'), parentNode.getAttribute('data-username'))
   }
 
   onFriendSearch (e) {
@@ -69,16 +77,12 @@ class FriendList extends Component {
 
 function FriendView (props) {
   return (
-    <div className='friend-container' data-phone={props.data.phone} data-id={props.data.id} data-username={props.data.username}>
+    <div className='friend-container' data-id={props.data.id} data-username={props.data.username}>
       <div className='friend-image-wrapper'>
         <img className='friend-image' src={props.data.image} />
       </div>
       <div className='friend-right-view'>
-        <div className='friend-name-time'>
-          <div className='friend-name'>{props.data.username}</div>
-          <div className='friend-time'>{props.data.timestamp}</div>
-        </div>
-        <div>{props.data.text}</div>
+        {props.data.username}
       </div>
     </div>
   )

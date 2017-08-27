@@ -10,11 +10,10 @@ class MainView extends Component {
   constructor (props) {
     super(props)
     this.state = { messages: [] }
-    this.socket = io(SOCKET_HOST, { query: `username=${props.username}` }).connect()
-    this.to = props.to
-    this.id = 1
-    this.from = props.username
-
+    this.socket = io(SOCKET_HOST, { query: `username=${props.userData.username}` }).connect()
+    this.to = props.toUserName
+    this.from = props.userData.username
+    this.id = props.toUserId
     // Listen for messages from the server
     this.socket.on('new message', message => {
       if (message.from === this.to) {
@@ -68,8 +67,8 @@ class MainView extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    this.id = nextProps.id
-    this.to = nextProps.to
+    this.to = nextProps.toUserName
+    this.id = nextProps.toUserId
     this.setState({
       messages: []
     })
@@ -104,7 +103,7 @@ class MainView extends Component {
 
   render () {
     return (
-      <div className='main-view-container'>
+      <div>
         <MessageList username={this.from} messages={this.state.messages} />
         <ChatInput onSend={this.sendHandler} />
       </div>

@@ -5,7 +5,7 @@ class LeftView extends Component {
   render () {
     return (
       <div className='left-view-container'>
-        <FriendList onFriendChange={this.props.onFriendChange} />
+        <FriendList userData={this.props.userData} onFriendChange={this.props.onFriendChange} />
       </div>
     )
   }
