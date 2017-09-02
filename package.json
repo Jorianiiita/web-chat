@@ -23,6 +23,6 @@
   "scripts": {
     "build": "webpack --config config/webpack.development.config.js",
     "watch": "webpack --config config/webpack.development.config.js --watch",
-    "start": "npm run watch & node src/server/server.js"
+    "start": "npm run build & node src/server/server.js & src/server/node_modules/.bin/json-server -p 3004 src/server/db.json"
   }
 }

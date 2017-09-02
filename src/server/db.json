@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "shubham",
+      "phone": "8726842869",
+      "image": "http://via.placeholder.com/50x50",
+      "friends": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 2,
+      "username": "induja",
+      "phone": "8729898976",
+      "image": "http://via.placeholder.com/50x50",
+      "friends": [
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "id": 3,
+      "username": "vibhor",
+      "phone": "8729899818",
+      "image": "http://via.placeholder.com/50x50",
+      "friends": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "username": "anupam",
+      "phone": "8729899808",
+      "image": "http://via.placeholder.com/50x50",
+      "friends": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "username": "rahul",
+      "phone": "8729899828",
+      "image": "http://via.placeholder.com/50x50",
+      "friends": [
+        1,
+        2
+      ]
+    },
+    {
+      "username": "jaggu",
+      "phone": "7980908032",
+      "image": "http://via.placeholder.com/50x50",
+      "friends": [
+        "2",
+        "3",
+        "4"
+      ],
+      "id": 7
+    }
+  ]
+}

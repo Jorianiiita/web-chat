@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const cors = require('cors')
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
 const path = require('path')
@@ -8,8 +7,6 @@ const PORT = 8001
 
 var connections = {}
 var users = []
-
-app.use(cors())
 
 app.use('/static/build', express.static(path.join(__dirname + '/../../public/static/build')))
 
