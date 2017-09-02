@@ -14,4 +14,4 @@ $ npm install
 ```sh
 $ npm run start
 ```
-5. Goto `http://localhost:8001` to see bloging-platform.
+5. Goto `http://localhost:8001` to see web-chat.
